@@ -1,0 +1,12 @@
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+else
+processID=`ps aux | grep python | grep "run.py" | grep -v "grep" | awk '{print $2;}'`
+if [ -z $processID ]
+then
+cd /home/arch2706/peldawsforpraatelan
+nohup python /home/arch2706/peldawsforpraatelan/run.py &> /home/arch2706/peldawsforpraatelan/server.log &
+else
+echo "Server is already up"
+fi
+fi

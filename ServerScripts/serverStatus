@@ -1,0 +1,7 @@
+processID=`ps aux | grep python | grep "run.py" | grep -v "grep" | awk '{print $2;}'`
+if [ -z $processID ]
+then
+echo "Server is down"
+else
+echo "Server is up"
+fi

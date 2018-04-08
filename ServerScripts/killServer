@@ -1,0 +1,12 @@
+if [ "$EUID" -ne 0 ]
+  then echo "Please run as root"
+else
+processID=`ps aux | grep python | grep "run.py" | grep -v "grep" | awk '{print $2;}'`
+if [ -z $processID ]
+then
+echo "Server is not running"
+else
+kill $processID
+echo "Server killed"
+fi
+fi

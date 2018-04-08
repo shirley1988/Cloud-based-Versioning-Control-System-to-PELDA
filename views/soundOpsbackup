@@ -1,0 +1,36 @@
+# Script file
+        script = praat._scripts_dir + "drawWaveform";
+
+        # Parameters to the script
+        params = [sound, startTime, endTime,
+                  praat._sounds_dir, praat._images_dir];
+
+        # Image name will be a combination of relevant params joined by a period.
+        image = praat._images_dir + str(sound.replace("wav", "png"))
+
+        # Add image name to params list
+        params.append(image)
+
+        # If image does not exist, run script
+        if not os.path.isfile(image):
+           praat.runScript(script, params)
+           utils.resizeImage(image)
+
+        # Image should be available now, generated or cached
+        resp = app.make_response(open(image).read())
+        resp.content_type = "image/png"
+
+        imagefile = praat._images_dir + str(sound.replace("wav", "png"))
+        sound_info = imread(imagefile)
+        plot(sound_info)
+        title('Wave form of %s' % sound)
+        savefig(imagefile)
+        utils.resizeImage(imagefile)
+        # Image should be available now, generated or cached
+        resp = app.make_response(open(imagefile).read())
+        print(resp)
+
+        return send_file(imagefile, mimetype='image/png')
+        #return resp
+
+
