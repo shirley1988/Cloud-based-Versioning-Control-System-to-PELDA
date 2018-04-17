@@ -3,16 +3,16 @@ from flask_cors import CORS
 import pymysql
 import subprocess
 
-database_host = 'peldaw2018.mysql.database.azure.com'
-database_user = 'myadmin@peldaw2018'
-database_password = '1988@Idaho'
-database_db = 'peldaw'
+database_host = ''
+database_user = ''
+database_password = ''
+database_db = ''
 
 conn = pymysql.connect(user = database_user, 
         password = database_password, 
         database = database_db, 
         host = database_host, 
-        ssl = {'ssl': {'ca': 'BaltimoreCyberTrustRoot.crt.pem'}})
+        ssl = {'ssl': {'ca': ''}})
 
 # Create flask app
 app = Flask(__name__)
