@@ -8,41 +8,25 @@
   A better method for styling can be seen below with .jcrop-light
   (Add a class to the holder and style elements for that extended class)
 */
-
-.jcrop-centered
-{
-    display: inline-block;
-}
-.crop-image-wrapper
-{
-    text-align: center;
-}
 .jcrop-holder {
   direction: ltr;
   text-align: left;
-	
 }
 /* Selection Border */
 .jcrop-vline,
 .jcrop-hline {
-  background: url("Jcrop.gif") #ffffff;
+  background: #ffffff url("Jcrop.gif");
   font-size: 0;
+  position: absolute;
 }
 .jcrop-vline {
-  opacity: 1 !important;
   height: 100%;
-  margin-right: -3px;
-  border-left: 2px dotted #fe0909;
-
+  width: 1px !important;
 }
 .jcrop-vline.right {
-  display: none;
   right: 0;
-  border-right-style: dotted;
-  border-right-width: 2px #fe0909;
 }
 .jcrop-hline {
-  display:  none !important;
   height: 1px !important;
   width: 100%;
 }
@@ -63,13 +47,12 @@
 /* Selection Handles */
 .jcrop-handle {
   background-color: #333333;
-  border: 1px solid #eeeeee;
+  border: 1px #eeeeee solid;
   width: 7px;
   height: 7px;
   font-size: 1px;
 }
 .jcrop-handle.ord-n {
-  
   left: 50%;
   margin-left: -4px;
   margin-top: -4px;
