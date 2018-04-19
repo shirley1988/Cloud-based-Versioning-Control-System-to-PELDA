@@ -29,6 +29,16 @@ change font of frequency, time
 		<script src="http://malsup.github.com/jquery.form.js"></script>
 		
 		<link rel="stylesheet" href="css/jquery.Jcrop.css" type="text/css" />
+		<!--<style>
+		    .absolute {
+            position: absolute;
+            right: 150px;
+            top: 50px;
+            width: 200px;
+            height: 100px;
+        } 
+        </style>
+    -->
 		
 		<script> 
 		
@@ -1578,21 +1588,14 @@ change font of frequency, time
 	    </script>
 	</head>
 
-
-
-
-
-
-
-
-
-
-
 	<body>
   		<!--<div id='fileinput' class="hidden">
 			<input type = 'file' class="fileinput" title = "Browse an EAF file">
-		</div>-->
-              
+		</div>
+        <div> 
+        	<h3>Greetings {{session.username}}</h3>
+        </h1>-->
+
 	<Span id='above'>
 		<audio id="audio" preload="auto"  onclick="playaudio(); unhide(this, 'animation');" muted controls style="position: absolute;top: 114px; left: 20px;">
 			<p>Your browser does not support the <code>audio</code> element.</p> 
@@ -1604,8 +1607,6 @@ change font of frequency, time
 			<div class="split"></div>
 			<!-- the horizontal split line -->
 			<div ><br> <br> </div> <hr >
-			
-			
 			
 			
 			<!-- the upload button -->	
