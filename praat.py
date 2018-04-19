@@ -6,10 +6,10 @@ import subprocess
 import bcrypt
 
 
-database_host = 'peldaw2018.mysql.database.azure.com'
-database_user = 'myadmin@peldaw2018'
-database_password = '1988@Idaho'
-database_db = 'peldaw'
+database_host = ''
+database_user = ''
+database_password = ''
+database_db = ''
 
 conn = pymysql.connect(user = database_user, 
         password = database_password, 
